@@ -13,7 +13,8 @@ namespace ItemSpawning
             if (other.tag == "CurrThrowable")
             {
                 Debug.Log("Item Exited");
-                newItem.SpawnItemIn();
+                
+                newItem.SpawnItemIn(other.gameObject);
             }
         }
     }

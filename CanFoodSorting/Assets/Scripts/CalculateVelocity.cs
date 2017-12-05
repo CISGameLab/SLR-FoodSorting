@@ -28,8 +28,8 @@ public class CalculateVelocity : MonoBehaviour {
             float endTime = Time.time;
 
             //Mouse positions distance from camera. Might be a better idea to use the cameras near plane
-            startPos.z = 0.1f;
-            endPos.z = 0.1f;
+            startPos.z = Camera.main.nearClipPlane;
+            endPos.z = Camera.main.nearClipPlane;
 
             //Makes the input pixel density independent
             startPos = Camera.main.ScreenToWorldPoint(startPos);
@@ -50,29 +50,35 @@ public class CalculateVelocity : MonoBehaviour {
             //expected values are what power you get when you try 
             //desired values are what you want
             //you might want these as public values so they can be set from the inspector
-            const float expectedMin = 50;
-            const float expectedMax = 60;
-            const float desiredMin = 15;
-            const float desiredMax = 20;
+            const float expectedMin = 0;
+            const float expectedMax = 2;
+            const float desiredMin = 25;
+            const float desiredMax = 35;
 
             //Measure expected power here
             Debug.Log(power);
 
             //change power from the range 50...60 to 0...1
             power -= expectedMin;
+            Debug.Log("Changing power: " + power);
             power /= expectedMax - expectedMin;
+            Debug.Log(power);
 
             //clamp value to between 0 and 1
             power = Mathf.Clamp01(power);
+            Debug.Log("Clamped: " + power);
 
             //change power to the range 15...20
             power *= desiredMax - desiredMin;
             power += desiredMin;
-
+            Debug.Log("Desired power: : " + power);
             //take the direction from the swipe. length of the vector is the power
             Vector3 velocity = (transform.rotation * dir).normalized * power;
+            float yVelocity = velocity.z + 2f;
+            Vector3 updatedVelocity = new Vector3(velocity.x, yVelocity, velocity.y+2f);
+            Debug.Log(velocity);
             currThrowable = GameObject.FindGameObjectWithTag("CurrThrowable").GetComponent<Rigidbody>();
-            currThrowable.velocity = velocity;
+            currThrowable.velocity = updatedVelocity;
 
         }
     }
