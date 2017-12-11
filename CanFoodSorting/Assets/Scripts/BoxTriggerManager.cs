@@ -7,12 +7,22 @@ namespace Scoring
     public class BoxTriggerManager : MonoBehaviour
     {
         public GameMan mainGame;
+        public string ItemType;
 
         void OnTriggerEnter(Collider other)
         {
             if (other.tag == "OldThrowable")
             {
-                Debug.Log("HERES A POINT");
+                if (other.gameObject.GetComponent<ItemType>().GetType() == ItemType)
+                {
+                    Debug.Log("HERES A POINT");
+                    mainGame.UpdateScore(true);
+                }
+                else
+                {
+                    Debug.Log("GIMME DAT POINT");
+                    mainGame.UpdateScore(false);
+                }
             }
         }
 

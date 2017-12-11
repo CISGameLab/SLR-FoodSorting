@@ -9,9 +9,13 @@ namespace ItemSpawning
         public SpawnItem newItem;
         public DestroyObjects dest;
 
+        private void Start()
+        {
+           // itemTypeAccepted;
+        }
         void OnTriggerExit(Collider other)
         {
-            if (other.tag == "CurrThrowable")
+            if (other.tag == "CurrThrowable" )
             {                 
                 newItem.SpawnItemIn(other.gameObject);
                 dest.CallDestroy(other.gameObject);

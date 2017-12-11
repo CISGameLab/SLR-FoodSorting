@@ -208,7 +208,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046225614319176}
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 0.32, y: -10.794219, z: 62}
+  m_LocalPosition: {x: 0.32, y: -10.794219, z: 83.96}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4167183642326724}
@@ -400,7 +400,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1192781354517142}
-  m_Material: {fileID: 13400000, guid: 8bf4824a288bc9b4ead95061a784a1b3, type: 2}
+  m_Material: {fileID: 13400000, guid: 6044a41f34c730e4893a6f849dd70488, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -412,7 +412,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390006475274828}
-  m_Material: {fileID: 13400000, guid: 8bf4824a288bc9b4ead95061a784a1b3, type: 2}
+  m_Material: {fileID: 13400000, guid: 6044a41f34c730e4893a6f849dd70488, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -424,7 +424,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046201983097090}
-  m_Material: {fileID: 13400000, guid: 8bf4824a288bc9b4ead95061a784a1b3, type: 2}
+  m_Material: {fileID: 13400000, guid: 6044a41f34c730e4893a6f849dd70488, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -448,7 +448,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1730176704951520}
-  m_Material: {fileID: 13400000, guid: 8bf4824a288bc9b4ead95061a784a1b3, type: 2}
+  m_Material: {fileID: 13400000, guid: 6044a41f34c730e4893a6f849dd70488, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -460,7 +460,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1724752430101074}
-  m_Material: {fileID: 13400000, guid: 8bf4824a288bc9b4ead95061a784a1b3, type: 2}
+  m_Material: {fileID: 13400000, guid: 6044a41f34c730e4893a6f849dd70488, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -472,7 +472,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146971601899050}
-  m_Material: {fileID: 13400000, guid: 8bf4824a288bc9b4ead95061a784a1b3, type: 2}
+  m_Material: {fileID: 13400000, guid: 6044a41f34c730e4893a6f849dd70488, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -484,7 +484,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560191949912588}
-  m_Material: {fileID: 13400000, guid: 8bf4824a288bc9b4ead95061a784a1b3, type: 2}
+  m_Material: {fileID: 13400000, guid: 6044a41f34c730e4893a6f849dd70488, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -501,3 +501,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bccc57eeceaf5a42940e984c72445c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainGame: {fileID: 0}
+  ItemType: vegetables

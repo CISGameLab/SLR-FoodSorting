@@ -7,6 +7,7 @@ namespace ItemSpawning
     public class SpawnItem : MonoBehaviour
     {
         public GameObject[] throwables;
+        public string[] itemTypes;
         public GameObject currThrowable;
         public Transform spawnPos;
         int arrayCount;
@@ -14,12 +15,7 @@ namespace ItemSpawning
 
         private void Start()
         {
-            arrayCount = throwables.Length - 1;
-            itemToGet = Random.Range(0, arrayCount);
-
-            currThrowable = throwables[itemToGet];
-
-            Instantiate(currThrowable, spawnPos.transform.position, spawnPos.transform.rotation);
+            Place();
         }
 
         public void SpawnItemIn(GameObject oldItem)
@@ -31,11 +27,15 @@ namespace ItemSpawning
         IEnumerator WaitingToSpawn()
         {
             yield return new WaitForSeconds(2);
+            Place();
+        }
 
-            arrayCount = throwables.Length - 1;
+        public void Place()
+        {
+            arrayCount = throwables.Length;
             itemToGet = Random.Range(0, arrayCount);
-
             currThrowable = throwables[itemToGet];
+            currThrowable.GetComponent<ItemType>().SetType(itemTypes[itemToGet]);
 
             Instantiate(currThrowable, spawnPos.transform.position, spawnPos.transform.rotation);
         }

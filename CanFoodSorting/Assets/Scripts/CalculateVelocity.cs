@@ -76,8 +76,8 @@ public class CalculateVelocity : MonoBehaviour {
             float yVelocity = velocity.z+5f;
             Vector3 updatedVelocity = new Vector3(velocity.x, yVelocity, velocity.y+5f);
 
-            Debug.Log(velocity);
-            Debug.Log("Power: " + power + "  Dis: " + distance + "  Duration: " + duration + "Uvelocity: "+ updatedVelocity);
+            //Debug.Log(velocity);
+            //Debug.Log("Power: " + power + "  Dis: " + distance + "  Duration: " + duration + " Uvelocity: "+ updatedVelocity);
             currThrowable = GameObject.FindGameObjectWithTag("CurrThrowable").GetComponent<Rigidbody>();
             currThrowable.velocity = updatedVelocity;
 
