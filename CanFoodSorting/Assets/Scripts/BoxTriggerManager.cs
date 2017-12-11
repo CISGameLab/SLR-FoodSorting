@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxTriggerManager : MonoBehaviour
+namespace Scoring
 {
-
-    void OnTriggerExit(Collider other)
+    public class BoxTriggerManager : MonoBehaviour
     {
-        if (other.tag == "CurrThrowable")
-        {
-            Debug.Log("HERES A POINT");
-        }
-    }
+        public GameMan mainGame;
 
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "OldThrowable")
+            {
+                Debug.Log("HERES A POINT");
+            }
+        }
+
+    }
 }

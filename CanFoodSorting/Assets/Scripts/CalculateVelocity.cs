@@ -50,13 +50,14 @@ public class CalculateVelocity : MonoBehaviour {
             //expected values are what power you get when you try 
             //desired values are what you want
             //you might want these as public values so they can be set from the inspector
-            const float expectedMin = 0;
+            const float expectedMin = 1;
             const float expectedMax = 2;
-            const float desiredMin = 25;
+            const float desiredMin = 20;
             const float desiredMax = 35;
 
+            /*
             //Measure expected power here
-            Debug.Log(power);
+            
 
             //change power from the range 50...60 to 0...1
             power -= expectedMin;
@@ -64,18 +65,19 @@ public class CalculateVelocity : MonoBehaviour {
 
             //clamp value to between 0 and 1
             power = Mathf.Clamp01(power);
-
+            Debug.Log("Clamped Power: " + power);
             //change power to the range 15...20
             power *= desiredMax - desiredMin;
             power += desiredMin;
-
+            */
             //take the direction from the swipe. length of the vector is the power
+
             Vector3 velocity = (transform.rotation * dir).normalized * power;
-            float yVelocity = velocity.z + 2f;
-            Vector3 updatedVelocity = new Vector3(velocity.x, yVelocity, velocity.y+2f);
+            float yVelocity = velocity.z+5f;
+            Vector3 updatedVelocity = new Vector3(velocity.x, yVelocity, velocity.y+5f);
 
             Debug.Log(velocity);
-
+            Debug.Log("Power: " + power + "  Dis: " + distance + "  Duration: " + duration + "Uvelocity: "+ updatedVelocity);
             currThrowable = GameObject.FindGameObjectWithTag("CurrThrowable").GetComponent<Rigidbody>();
             currThrowable.velocity = updatedVelocity;
 
