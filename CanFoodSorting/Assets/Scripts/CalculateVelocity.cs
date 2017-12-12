@@ -7,9 +7,11 @@ public class CalculateVelocity : MonoBehaviour {
     Vector3 startPos;
     float startTime;
     private Rigidbody currThrowable;
+    float power;
     // Use this for initialization
-    void Start() {
-
+    void Start()
+    {
+        power = 0f;
     }
 
     void Update()
@@ -45,7 +47,7 @@ public class CalculateVelocity : MonoBehaviour {
             float distance = dir.magnitude;
 
             //Faster or longer swipes give higher power
-            float power = distance / duration;
+            power = distance / duration;
 
             //expected values are what power you get when you try 
             //desired values are what you want
@@ -73,14 +75,16 @@ public class CalculateVelocity : MonoBehaviour {
             //take the direction from the swipe. length of the vector is the power
 
             Vector3 velocity = (transform.rotation * dir).normalized * power;
-            float yVelocity = velocity.z+2f;
+            float yVelocity = velocity.z+3f;
             Vector3 updatedVelocity = new Vector3(velocity.x, yVelocity, velocity.y+2f);
 
             //Debug.Log(velocity);
             //Debug.Log("Power: " + power + "  Dis: " + distance + "  Duration: " + duration + " Uvelocity: "+ updatedVelocity);
             currThrowable = GameObject.FindGameObjectWithTag("CurrThrowable").GetComponent<Rigidbody>();
             currThrowable.velocity = updatedVelocity;
+           
 
         }
+       
     }
 }
