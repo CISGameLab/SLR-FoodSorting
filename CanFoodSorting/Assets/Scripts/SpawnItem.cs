@@ -37,7 +37,7 @@ namespace ItemSpawning
             currThrowable = throwables[itemToGet];
             currThrowable.GetComponent<ItemType>().SetType(itemTypes[itemToGet]);
 
-            Instantiate(currThrowable, spawnPos.transform.position, spawnPos.transform.rotation);
+            Instantiate(currThrowable, spawnPos.transform.position, currThrowable.transform.rotation);
         }
     }
 }

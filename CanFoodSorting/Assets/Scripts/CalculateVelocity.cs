@@ -73,8 +73,8 @@ public class CalculateVelocity : MonoBehaviour {
             //take the direction from the swipe. length of the vector is the power
 
             Vector3 velocity = (transform.rotation * dir).normalized * power;
-            float yVelocity = velocity.z+5f;
-            Vector3 updatedVelocity = new Vector3(velocity.x, yVelocity, velocity.y+5f);
+            float yVelocity = velocity.z+2f;
+            Vector3 updatedVelocity = new Vector3(velocity.x, yVelocity, velocity.y+2f);
 
             //Debug.Log(velocity);
             //Debug.Log("Power: " + power + "  Dis: " + distance + "  Duration: " + duration + " Uvelocity: "+ updatedVelocity);
