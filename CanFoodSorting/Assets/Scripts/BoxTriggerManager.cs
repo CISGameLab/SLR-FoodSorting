@@ -15,12 +15,12 @@ namespace Scoring
             {
                 if (other.gameObject.GetComponent<ItemType>().GetType() == ItemType)
                 {
-                    Debug.Log("HERES A POINT");
+                   // Debug.Log("HERES A POINT");
                     mainGame.UpdateScore(true);
                 }
                 else
                 {
-                    Debug.Log("GIMME DAT POINT");
+                    //Debug.Log("GIMME DAT POINT");
                     mainGame.UpdateScore(false);
                 }
             }

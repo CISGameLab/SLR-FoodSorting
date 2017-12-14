@@ -49,30 +49,6 @@ public class CalculateVelocity : MonoBehaviour {
             //Faster or longer swipes give higher power
             power = distance / duration;
 
-            //expected values are what power you get when you try 
-            //desired values are what you want
-            //you might want these as public values so they can be set from the inspector
-            const float expectedMin = 1;
-            const float expectedMax = 2;
-            const float desiredMin = 20;
-            const float desiredMax = 35;
-
-            /*
-            //Measure expected power here
-            
-
-            //change power from the range 50...60 to 0...1
-            power -= expectedMin;
-            power /= expectedMax - expectedMin;
-
-            //clamp value to between 0 and 1
-            power = Mathf.Clamp01(power);
-            Debug.Log("Clamped Power: " + power);
-            //change power to the range 15...20
-            power *= desiredMax - desiredMin;
-            power += desiredMin;
-            */
-            //take the direction from the swipe. length of the vector is the power
 
             Vector3 velocity = (transform.rotation * dir).normalized * power;
             float yVelocity = velocity.z+3f;

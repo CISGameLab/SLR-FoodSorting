@@ -23,6 +23,7 @@ namespace Scoring
         bool highscoreExists;
         private bool redFont;
         private bool flashing;
+        public SoundMan sound;
 
         // Use this for initialization
         void Start()
