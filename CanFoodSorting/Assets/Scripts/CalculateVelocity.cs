@@ -8,6 +8,8 @@ public class CalculateVelocity : MonoBehaviour {
     float startTime;
     private Rigidbody currThrowable;
     float power;
+    public SoundMan sound;
+
     // Use this for initialization
     void Start()
     {
@@ -21,6 +23,7 @@ public class CalculateVelocity : MonoBehaviour {
             //Store initial values
             startPos = Input.mousePosition;
             startTime = Time.time;
+            sound.ClickSound();
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -58,7 +61,7 @@ public class CalculateVelocity : MonoBehaviour {
             //Debug.Log("Power: " + power + "  Dis: " + distance + "  Duration: " + duration + " Uvelocity: "+ updatedVelocity);
             currThrowable = GameObject.FindGameObjectWithTag("CurrThrowable").GetComponent<Rigidbody>();
             currThrowable.velocity = updatedVelocity;
-           
+            sound.DragSound();
 
         }
        

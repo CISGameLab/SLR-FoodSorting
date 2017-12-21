@@ -99,12 +99,14 @@ namespace Scoring
             {
                 currScore += 100 * streakMult;
                 streakMult++;
+                sound.PointSound();
 
             }
             else
             {
                 currScore -= 100;
                 streakMult = 1;
+                sound.WrongSound();
             }
 
             scoreText.text = "SCORE: " + currScore;
