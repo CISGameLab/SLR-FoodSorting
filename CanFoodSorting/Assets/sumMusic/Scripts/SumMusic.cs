@@ -60,7 +60,7 @@ public class SumMusic : MonoBehaviour {
 
         // Flip value of musicOn
         musicOn = !musicOn;
-        Debug.Log("Music status changed to " + musicOn);
+        //Debug.Log("Music status changed to " + musicOn);
         AudioSource src = GetComponent<AudioSource>();
 
         // Play or stop music
@@ -75,7 +75,7 @@ public class SumMusic : MonoBehaviour {
 
         // Save status to PlayerPrefs as int if needed (1=on,0=off)
         if (saveSettings && !skipSave) {
-            Debug.Log("Saving sound settings");
+           // Debug.Log("Saving sound settings");
             PlayerPrefs.SetInt("sumMusicOn", musicOn ? 1 : 0);
         }
     }
